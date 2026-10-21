@@ -1,4 +1,5 @@
-import { getAllRoutes, getListOfRegions, getListOfSeasons } from '../models/model.js';
+// updated new path for model import
+import { getAllRoutes, getListOfRegions, getListOfSeasons } from '../../models/model.js';
 
 export default async (req, res) => {
     const regions = await getListOfRegions();

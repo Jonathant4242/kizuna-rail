@@ -1,5 +1,6 @@
-import { getRouteById, getSchedulesByRoute } from '../models/model.js';
-
+// updated new path for model import
+import { getRouteById, getSchedulesByRoute } from '../../models/model.js';
+    
 export default async (req, res) => {
     const { routeId } = req.params;
     const details = await getRouteById(routeId);
