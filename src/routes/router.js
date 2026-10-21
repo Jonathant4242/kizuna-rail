@@ -1,5 +1,6 @@
 import challengeScenariosRouter from './scenarios.js';
-import railRoutesRouter from './routes.js';
+// Rail routes updated due to new locations.
+import railRoutesRouter from './routes/index.js';
 import { Router } from 'express';
 import { homePage, aboutPage, testErrorPage } from './index.js';
 
