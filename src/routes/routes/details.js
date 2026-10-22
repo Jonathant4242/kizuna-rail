@@ -1,6 +1,7 @@
 // updated new path for model import
 import { getRouteById, getSchedulesByRoute } from '../../models/model.js';
-    
+import { monthToName } from '../../includes/helpers.js';
+
 export default async (req, res) => {
     const { routeId } = req.params;
     const details = await getRouteById(routeId);
@@ -8,8 +9,9 @@ export default async (req, res) => {
 
     // TODO: getCompleteRouteDetails instead
 
-    res.render('routes/details', { 
+    res.render('routes/details', {
         title: 'Route Details',
-        details
+        details,
+        monthToName
     });
 };
