@@ -406,14 +406,77 @@ article.confirmation-page {
 }
 
 @media print {
-    article.confirmation-page {
-        .confirmation-actions {
-            display: none;
-        }
+    /* hide the site layout when printing a confirmation */
+    body:has(.confirmation-page) {
+        display: block !important;
+        height: auto !important;
+        min-height: 0 !important;
+        header, nav, footer { display: none !important; }
+        main { display: block !important; padding: 0 !important; }
+    }
 
+    article.confirmation-page {
+        margin: 0 !important;
+        .success-icon, .confirmation-message, .next-steps, .confirmation-actions {
+            display: none !important;
+        }
         .confirmation-header {
+            padding: 8px;
+            gap: 6px;
+            margin-bottom: 12px;
             background-color: white;
-            border: 2px solid var(--clr-primary);
+            border: 1px solid var(--clr-primary);
+            break-inside: avoid;
+            .booking-reference {
+                flex-direction: row;
+                gap: 8px;
+                margin-top: 0;
+                padding: 4px 8px;
+            }
+        }
+        /* reduce spacing without changing the text size */
+        .confirmation-content {
+            display: block;
+            section { margin-bottom: 12px; }
+            .section-title {
+                margin-bottom: 8px;
+                padding-bottom: 4px;
+                break-after: avoid;
+            }
+            .booking-details .details-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 6px;
+                .detail-card {
+                    padding: 6px 8px;
+                    break-inside: avoid;
+                    .detail-icon { display: none; }
+                }
+            }
+            .passengers-info .passengers-list {
+                display: block;
+                .passenger-info-card {
+                    break-inside: avoid;
+                    margin-bottom: 6px;
+                    overflow: visible;
+                    .passenger-header { padding: 4px 8px; }
+                    .passenger-details {
+                        display: grid;
+                        grid-template-columns: 1fr 1.5fr 1fr;
+                        gap: 8px;
+                        padding: 6px 8px;
+                        .passenger-detail {
+                            min-width: 0;
+                            .passenger-value { overflow-wrap: anywhere; }
+                        }
+                    }
+                }
+            }
+            .important-info {
+                padding: 8px;
+                break-inside: avoid;
+                .info-title { margin-bottom: 6px; }
+                .info-list { gap: 3px; }
+            }
         }
     }
 }
