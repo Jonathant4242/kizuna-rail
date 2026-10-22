@@ -63,7 +63,8 @@
             <h2>Operating Schedule</h2>
             <div class="months-grid">
                 <% details.operatingMonths.forEach(function(month) { %>
-                <span class="month-badge"><%= month %></span>
+                    <!-- display month badge using monthToName helper -->
+                <span class="month-badge"><%= monthToName(month) %></span>
                 <% }); %>
             </div>
         </div>

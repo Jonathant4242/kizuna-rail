@@ -52,6 +52,19 @@
                         <span class="detail-value"><%= new Date(confirmation.createdAt).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }) %></span>
                     </div>
                 </div>
+                <!-- show USD ticket price and total -->
+                <div class="detail-card">
+                    <div class="detail-content">
+                        <span class="detail-label">Price per Ticket (USD)</span>
+                        <span class="detail-value">$<%= unitPrice.toFixed(2) %></span>
+                    </div>
+                </div>
+                <div class="detail-card">
+                    <div class="detail-content">
+                        <span class="detail-label">Total Amount (USD)</span>
+                        <span class="detail-value">$<%= totalPrice.toFixed(2) %></span>
+                    </div>
+                </div>
             </div>
         </section>
 
