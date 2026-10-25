@@ -1,3 +1,5 @@
+## https://docs.google.com/videos/d/1ubRTAX2QC3n6P1ZJ4ooZXH-ZE17POo6XAVjRlRH5jBY/play?usp=sharing
+
 # Kizuna Rail (絆鉄道)
 
 A brownfield web development training project designed to build real-world software engineering expertise through reverse engineering, refactoring, and debugging existing codebases.
